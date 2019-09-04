@@ -43,6 +43,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Photos from Pexels API" id="xqV-dZ-cJs"/>
+                    <connections>
+                        <outlet property="photosTableView" destination="H8h-YC-DTn" id="kbj-Xy-F4D"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
