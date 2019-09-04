@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		54BFCFBCA4AD0682A1BED867 /* Pods_RentateamTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D4CE63902B45984C0E8FD3A /* Pods_RentateamTest.framework */; };
 		6C48D6B02320173300E5B144 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C48D6AE2320173300E5B144 /* PhotoTableViewCell.swift */; };
 		6C48D6B12320173300E5B144 /* PhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C48D6AF2320173300E5B144 /* PhotoTableViewCell.xib */; };
 		6C48D6BB2320182000E5B144 /* PhotosPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C48D6B52320182000E5B144 /* PhotosPresenter.swift */; };
@@ -22,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D4CE63902B45984C0E8FD3A /* Pods_RentateamTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RentateamTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		63EBB68326564807B3F5F7FB /* Pods-RentateamTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RentateamTest.debug.xcconfig"; path = "Target Support Files/Pods-RentateamTest/Pods-RentateamTest.debug.xcconfig"; sourceTree = "<group>"; };
 		6C48D6AE2320173300E5B144 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
 		6C48D6AF2320173300E5B144 /* PhotoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoTableViewCell.xib; sourceTree = "<group>"; };
 		6C48D6B52320182000E5B144 /* PhotosPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosPresenter.swift; sourceTree = "<group>"; };
@@ -36,6 +39,7 @@
 		6C6DBECB231E9F3E00D66A94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6C6DBECE231E9F3E00D66A94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6C6DBED0231E9F3E00D66A94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85D0BDB3AAD20EDEFB60798B /* Pods-RentateamTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RentateamTest.release.xcconfig"; path = "Target Support Files/Pods-RentateamTest/Pods-RentateamTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,12 +47,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54BFCFBCA4AD0682A1BED867 /* Pods_RentateamTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		35E69511FDF38365515946F2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D4CE63902B45984C0E8FD3A /* Pods_RentateamTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6C48D6AD2320172500E5B144 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +107,8 @@
 			children = (
 				6C6DBEC3231E9F3D00D66A94 /* RentateamTest */,
 				6C6DBEC2231E9F3D00D66A94 /* Products */,
+				CC20E1B9B25EBD9B57435095 /* Pods */,
+				35E69511FDF38365515946F2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,6 +132,16 @@
 			path = RentateamTest;
 			sourceTree = "<group>";
 		};
+		CC20E1B9B25EBD9B57435095 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				63EBB68326564807B3F5F7FB /* Pods-RentateamTest.debug.xcconfig */,
+				85D0BDB3AAD20EDEFB60798B /* Pods-RentateamTest.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -124,9 +149,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6C6DBED3231E9F3E00D66A94 /* Build configuration list for PBXNativeTarget "RentateamTest" */;
 			buildPhases = (
+				01D830EDDE7104CB03E9666B /* [CP] Check Pods Manifest.lock */,
 				6C6DBEBD231E9F3D00D66A94 /* Sources */,
 				6C6DBEBE231E9F3D00D66A94 /* Frameworks */,
 				6C6DBEBF231E9F3D00D66A94 /* Resources */,
+				2F296D59E20D9047B382C601 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -183,6 +210,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		01D830EDDE7104CB03E9666B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RentateamTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2F296D59E20D9047B382C601 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RentateamTest/Pods-RentateamTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RentateamTest/Pods-RentateamTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RentateamTest/Pods-RentateamTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6C6DBEBD231E9F3D00D66A94 /* Sources */ = {
@@ -340,6 +409,7 @@
 		};
 		6C6DBED4231E9F3E00D66A94 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63EBB68326564807B3F5F7FB /* Pods-RentateamTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -357,6 +427,7 @@
 		};
 		6C6DBED5231E9F3E00D66A94 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85D0BDB3AAD20EDEFB60798B /* Pods-RentateamTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
