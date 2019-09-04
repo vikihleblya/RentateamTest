@@ -11,6 +11,7 @@ class PhotosViewController: UIViewController, PhotosDisplayLogic
     //MARK: Properties
     private let cellIdentifier = "photoCell"
     private var photos: [Photo] = []
+    private var fetchingMore = false
     var interactor: PhotosBusinessLogic?
     var router: (NSObjectProtocol & PhotosRoutingLogic & PhotosDataPassing)?
 
@@ -61,7 +62,7 @@ class PhotosViewController: UIViewController, PhotosDisplayLogic
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        interactor?.makeRequest()
+        interactor?.makeRequest(photosCount: photos.count)
     }
     
     func setupTableView() {
@@ -73,6 +74,7 @@ class PhotosViewController: UIViewController, PhotosDisplayLogic
     func getPhotosFromRequest(photos: [Photo]) {
         self.photos += photos
         self.photosTableView.reloadData()
+        fetchingMore = false
     }
 
 }
@@ -95,6 +97,24 @@ extension PhotosViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return CGFloat(integerLiteral: 100)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        
+        if offsetY > contentHeight - scrollView.frame.height {
+            if !fetchingMore {
+                fetch()
+            }
+        }
+    }
+    
+    func fetch() {
+        fetchingMore = true
+        print("fetch")
+        print("AF | VC | photo count to fetch: \(photos.count)")
+        interactor?.makeRequest(photosCount: photos.count)
     }
     
 }
