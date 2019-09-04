@@ -56,19 +56,20 @@ class PhotosViewController: UIViewController, PhotosDisplayLogic
   
     // MARK: View lifecycle
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    photosTableView.register(UINib(nibName: "PhotoTableViewCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
-    photosTableView.delegate = self
-    photosTableView.dataSource = self
-    doSomething()
-  }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        photosTableView.register(UINib(nibName: "PhotoTableViewCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
+        photosTableView.delegate = self
+        photosTableView.dataSource = self
+        interactor?.makeRequest()
+    }
   
+    
   
-  func doSomething() {
-    let request = Photos.Something.Request()
-    interactor?.doSomething(request: request)
-  }
+    func doSomething() {
+        let request = Photos.Something.Request()
+        interactor?.doSomething(request: request)
+    }
 
 }
 
