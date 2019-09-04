@@ -2,22 +2,21 @@ import Foundation
 import SwiftyJSON
 
 class Photo {
+    let id: Int?
     let phName: String?
-    let phUrl: String?
-    let originalPhotoUrl: String?
-    let thumbnailPhotoUrl: String?
+    let phLink: String?
+    let photoUrl: URL?
     
     init?(json: JSON) {
-        guard
+      guard let id = json["id"].int,
             let photographer = json["photographer"].string,
-            let photographer_url = json["photographer_url"].string,
-            let originalPhoto = json["src"]["original"].string,
-            let mediumPhoto = json["src"]["medium"].string
+            let photographerStringUrl = json["photographer_url"].string,
+            let originalPhotoStringUrl = json["src"]["large"].string
             else { return nil }
         
+        self.id = id
         self.phName = photographer
-        self.phUrl = photographer_url
-        self.originalPhotoUrl = originalPhoto
-        self.thumbnailPhotoUrl = mediumPhoto
+        self.phLink = photographerStringUrl
+        self.photoUrl = URL(string: originalPhotoStringUrl)
     }
 }

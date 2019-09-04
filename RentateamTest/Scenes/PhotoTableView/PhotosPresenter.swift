@@ -2,7 +2,8 @@ import UIKit
 
 protocol PhotosPresentationLogic
 {
-  func presentSomething(response: Photos.Something.Response)
+    func presentSomething(response: Photos.Something.Response)
+    func didGetRequest(photos: [Photo])
 }
 
 class PhotosPresenter: PhotosPresentationLogic
@@ -15,4 +16,7 @@ class PhotosPresenter: PhotosPresentationLogic
   {
     let viewModel = Photos.Something.ViewModel()
   }
+    func didGetRequest(photos: [Photo]) {
+        viewController?.getPhotosFromRequest(photos: photos)
+    }
 }

@@ -1,14 +1,16 @@
 import UIKit
+import SDWebImage
 
 protocol PhotosDisplayLogic: class
 {
-  
+    func getPhotosFromRequest(photos: [Photo])
 }
 
 class PhotosViewController: UIViewController, PhotosDisplayLogic
 {
     //MARK: Properties
-    let cellIdentifier = "photoCell"
+    private let cellIdentifier = "photoCell"
+    private var photos: [Photo] = []
     var interactor: PhotosBusinessLogic?
     var router: (NSObjectProtocol & PhotosRoutingLogic & PhotosDataPassing)?
 
@@ -58,30 +60,37 @@ class PhotosViewController: UIViewController, PhotosDisplayLogic
   
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTableView()
+        interactor?.makeRequest()
+    }
+    
+    func setupTableView() {
         photosTableView.register(UINib(nibName: "PhotoTableViewCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
         photosTableView.delegate = self
         photosTableView.dataSource = self
-        interactor?.makeRequest()
     }
   
-    
-  
-    func doSomething() {
-        let request = Photos.Something.Request()
-        interactor?.doSomething(request: request)
+    func getPhotosFromRequest(photos: [Photo]) {
+        self.photos += photos
+        self.photosTableView.reloadData()
     }
 
 }
 
 extension PhotosViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 15
+        return photos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = photosTableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? PhotoTableViewCell
-        cell?.phNameLabel.text = "Bruce Lee"
-        return cell!
+        let cell = photosTableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! PhotoTableViewCell
+        if !photos.isEmpty {
+            let photo = photos[indexPath.row]
+            cell.phNameLabel.text = photo.phName
+            
+            cell.photoImageView?.sd_setImage(with: photo.photoUrl, completed: nil)
+        }
+        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
