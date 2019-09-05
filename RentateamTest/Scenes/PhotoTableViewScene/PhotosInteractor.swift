@@ -9,17 +9,18 @@ protocol PhotosBusinessLogic
 }
 
 protocol PhotosDataStore {
-    
+    func getDataOfImage(id: String?) -> Date
 }
 
 class PhotosInteractor: PhotosBusinessLogic, PhotosDataStore {
     
     private let headers: HTTPHeaders = ["Authorization": "563492ad6f917000010000014926874ef5ab4f26bcb8591f7b00b5e5"]
-//    private let url = URL(string: "https://api.pexels.com/v1/curated?per_page=15&page=1")
     private let photosPerOneFetch = 15
+    private let cacheForDates = NSCache<NSString, NSDate>()
+    private var photos: [Photo] = []
     var presenter: PhotosPresentationLogic?
-    var worker: PhotosWorker?
-    var photos: [Photo] = []
+    
+    
     
     
     func makeRequest(photosCount: Int) {
@@ -41,7 +42,7 @@ class PhotosInteractor: PhotosBusinessLogic, PhotosDataStore {
                 let data = try JSON(data: json)
                 print("AF | Count of fetched photos: \(data["photos"].count)")
                 for photoJson in data["photos"].arrayValue {
-                    if let photo = Photo(json: photoJson) {
+                    if let photo = Photo(json: photoJson, date: getDataOfImage(id: photoJson["src"]["large"].string)) {
                         self.photos.append(photo)
                     }
                 }
@@ -65,6 +66,15 @@ class PhotosInteractor: PhotosBusinessLogic, PhotosDataStore {
 }
 
 extension PhotosInteractor {
-  
+    func getDataOfImage(id: String?) -> Date {
+        guard let id = id else { return Date() }
+        if let cachedDate = cacheForDates.object(forKey: id as NSString) {
+            return cachedDate as Date
+        } else {
+            let date = Date()
+            cacheForDates.setObject(date as NSDate, forKey: id as NSString)
+            return date
+        }
+    }
 }
 
