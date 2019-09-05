@@ -1,5 +1,5 @@
 //
-//  PhotoDescriptionRouter.swift
+//  PhotosDescriptionRouter.swift
 //  RentateamTest
 //
 //  Created by Виктор Григорьев on 05/09/2019.
@@ -12,20 +12,20 @@
 
 import UIKit
 
-@objc protocol PhotoDescriptionRoutingLogic
+@objc protocol PhotosDescriptionRoutingLogic
 {
   //func routeToSomewhere(segue: UIStoryboardSegue?)
 }
 
-protocol PhotoDescriptionDataPassing
+protocol PhotosDescriptionDataPassing
 {
-  var dataStore: PhotoDescriptionDataStore? { get }
+  var dataStore: PhotosDescriptionDataStore? { get }
 }
 
-class PhotoDescriptionRouter: NSObject, PhotoDescriptionRoutingLogic, PhotoDescriptionDataPassing
+class PhotosDescriptionRouter: NSObject, PhotosDescriptionRoutingLogic, PhotosDescriptionDataPassing
 {
-  weak var viewController: PhotoDescriptionViewController?
-  var dataStore: PhotoDescriptionDataStore?
+  weak var viewController: PhotosDescriptionViewController?
+  var dataStore: PhotosDescriptionDataStore?
   
   // MARK: Routing
   
@@ -46,14 +46,14 @@ class PhotoDescriptionRouter: NSObject, PhotoDescriptionRoutingLogic, PhotoDescr
 
   // MARK: Navigation
   
-  //func navigateToSomewhere(source: PhotoDescriptionViewController, destination: SomewhereViewController)
+  //func navigateToSomewhere(source: PhotosDescriptionViewController, destination: SomewhereViewController)
   //{
   //  source.show(destination, sender: nil)
   //}
   
   // MARK: Passing data
   
-  //func passDataToSomewhere(source: PhotoDescriptionDataStore, destination: inout SomewhereDataStore)
+  //func passDataToSomewhere(source: PhotosDescriptionDataStore, destination: inout SomewhereDataStore)
   //{
   //  destination.name = source.name
   //}

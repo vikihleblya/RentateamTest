@@ -1,5 +1,5 @@
 //
-//  PhotoDescriptionModels.swift
+//  PhotosDescriptionModels.swift
 //  RentateamTest
 //
 //  Created by Виктор Григорьев on 05/09/2019.
@@ -12,7 +12,7 @@
 
 import UIKit
 
-enum PhotoDescription
+enum PhotosDescription
 {
   // MARK: Use cases
   

@@ -51,10 +51,10 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="99.776785714285708"/>
         </scene>
-        <!--Photo Description View Controller-->
+        <!--Photos Description View Controller-->
         <scene sceneID="4af-EJ-qq3">
             <objects>
-                <viewController id="Hf9-y1-fdW" customClass="PhotoDescriptionViewController" customModule="RentateamTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="photoDescription" id="Hf9-y1-fdW" customClass="PhotosDescriptionViewController" customModule="RentateamTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="StM-K1-qli">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -104,10 +104,10 @@
                         <viewLayoutGuide key="safeArea" id="N7g-eT-MeS"/>
                     </view>
                     <connections>
-                        <outlet property="dateOfCaching" destination="eBV-Pk-6CR" id="iqz-Lh-3Bz"/>
-                        <outlet property="phNameLabel" destination="3J1-dX-Zb1" id="i73-qm-LfZ"/>
-                        <outlet property="photoImageView" destination="GWg-zG-VAu" id="HUh-0S-6kg"/>
-                        <outlet property="photoUrlLabel" destination="DZo-3R-hS2" id="zKO-co-obX"/>
+                        <outlet property="dateOfCaching" destination="eBV-Pk-6CR" id="omR-Ys-dTq"/>
+                        <outlet property="phNameLabel" destination="3J1-dX-Zb1" id="jwE-WX-Kxg"/>
+                        <outlet property="photoImageView" destination="GWg-zG-VAu" id="wKx-5b-aSD"/>
+                        <outlet property="photoUrlLabel" destination="DZo-3R-hS2" id="tS7-WN-DnY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dlx-dX-Rlw" userLabel="First Responder" sceneMemberID="firstResponder"/>

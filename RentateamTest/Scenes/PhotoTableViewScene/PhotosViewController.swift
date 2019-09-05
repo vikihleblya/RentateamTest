@@ -42,16 +42,6 @@ class PhotosViewController: UIViewController, PhotosDisplayLogic
     router.dataStore = interactor
   }
   
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
-    }
-  }
     
     //MARK: Outlets
     @IBOutlet weak var photosTableView: UITableView!
@@ -75,6 +65,13 @@ class PhotosViewController: UIViewController, PhotosDisplayLogic
         self.photos += photos
         self.photosTableView.reloadData()
         fetchingMore = false
+    }
+    
+    func fetch() {
+        fetchingMore = true
+        print("fetch")
+        print("AF | VC | photo count to fetch: \(photos.count)")
+        interactor?.makeRequest(photosCount: photos.count)
     }
 
 }
@@ -110,11 +107,9 @@ extension PhotosViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
-    func fetch() {
-        fetchingMore = true
-        print("fetch")
-        print("AF | VC | photo count to fetch: \(photos.count)")
-        interactor?.makeRequest(photosCount: photos.count)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let photo = photos[indexPath.row]
+        router?.routeTo(from: storyboard, routeStoryBoardId: "photoDescription", navigationController: navigationController, photo: photo)
     }
     
 }

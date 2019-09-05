@@ -18,7 +18,6 @@ class PhotosInteractor: PhotosBusinessLogic, PhotosDataStore {
 //    private let url = URL(string: "https://api.pexels.com/v1/curated?per_page=15&page=1")
     private let photosPerOneFetch = 15
     var presenter: PhotosPresentationLogic?
-    var worker: PhotosWorker?
     var photos: [Photo] = []
     
     

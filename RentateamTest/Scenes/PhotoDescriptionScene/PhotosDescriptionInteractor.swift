@@ -1,5 +1,5 @@
 //
-//  PhotoDescriptionInteractor.swift
+//  PhotosDescriptionInteractor.swift
 //  RentateamTest
 //
 //  Created by Виктор Григорьев on 05/09/2019.
@@ -12,30 +12,30 @@
 
 import UIKit
 
-protocol PhotoDescriptionBusinessLogic
+protocol PhotosDescriptionBusinessLogic
 {
-  func doSomething(request: PhotoDescription.Something.Request)
+  func doSomething(request: PhotosDescription.Something.Request)
 }
 
-protocol PhotoDescriptionDataStore
+protocol PhotosDescriptionDataStore
 {
   //var name: String { get set }
 }
 
-class PhotoDescriptionInteractor: PhotoDescriptionBusinessLogic, PhotoDescriptionDataStore
+class PhotosDescriptionInteractor: PhotosDescriptionBusinessLogic, PhotosDescriptionDataStore
 {
-  var presenter: PhotoDescriptionPresentationLogic?
-  var worker: PhotoDescriptionWorker?
+  var presenter: PhotosDescriptionPresentationLogic?
+  var worker: PhotosDescriptionWorker?
   //var name: String = ""
   
   // MARK: Do something
   
-  func doSomething(request: PhotoDescription.Something.Request)
+  func doSomething(request: PhotosDescription.Something.Request)
   {
-    worker = PhotoDescriptionWorker()
+    worker = PhotosDescriptionWorker()
     worker?.doSomeWork()
     
-    let response = PhotoDescription.Something.Response()
+    let response = PhotosDescription.Something.Response()
     presenter?.presentSomething(response: response)
   }
 }

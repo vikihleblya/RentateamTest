@@ -1,5 +1,5 @@
 //
-//  PhotoDescriptionWorker.swift
+//  PhotosDescriptionWorker.swift
 //  RentateamTest
 //
 //  Created by Виктор Григорьев on 05/09/2019.
@@ -12,7 +12,7 @@
 
 import UIKit
 
-class PhotoDescriptionWorker
+class PhotosDescriptionWorker
 {
   func doSomeWork()
   {
