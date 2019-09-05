@@ -13,65 +13,9 @@
 import UIKit
 import SDWebImage
 
-protocol PhotosDescriptionDisplayLogic: class
-{
-  
-}
-
-class PhotosDescriptionViewController: UIViewController, PhotosDescriptionDisplayLogic
-{
-    var interactor: PhotosDescriptionBusinessLogic?
-    var router: (NSObjectProtocol & PhotosDescriptionRoutingLogic & PhotosDescriptionDataPassing)?
+class PhotosDescriptionViewController: UIViewController {
+    // MARK: Variables
     var photo: Photo?
-    
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = PhotosDescriptionInteractor()
-    let presenter = PhotosDescriptionPresenter()
-    let router = PhotosDescriptionRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
-    }
-  }
-  
-  // MARK: View lifecycle
-  
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupView()
-    }
   
     // MARK: Outlets
     @IBOutlet weak var photoImageView: UIImageView!
@@ -79,11 +23,17 @@ class PhotosDescriptionViewController: UIViewController, PhotosDescriptionDispla
     @IBOutlet weak var photoUrlLabel: UILabel!
     @IBOutlet weak var dateOfCaching: UILabel!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupView()
+    }
+    
     func setupView() {
         if let photo = self.photo {
             photoImageView.sd_setImage(with: photo.photoUrl, completed: nil)
             phNameLabel.text = photo.phName
             photoUrlLabel.text = photo.phLink
+            dateOfCaching.text = photo.date?.getString()
         }
     }
     
