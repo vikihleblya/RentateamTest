@@ -6,8 +6,7 @@ protocol PhotosDataPassing
     func routeTo(from storyboard: UIStoryboard?, routeStoryBoardId: String, navigationController: UINavigationController?, photo: Photo)
 }
 
-class PhotosRouter: NSObject, PhotosRoutingLogic, PhotosDataPassing
-{
+class PhotosRouter: NSObject, PhotosDataPassing {
     weak var viewController: PhotosViewController?
     var dataStore: PhotosDataStore?
     
