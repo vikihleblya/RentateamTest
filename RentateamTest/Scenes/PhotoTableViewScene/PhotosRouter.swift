@@ -1,10 +1,5 @@
 import UIKit
 
-@objc protocol PhotosRoutingLogic
-{
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
-}
-
 protocol PhotosDataPassing
 {
     var dataStore: PhotosDataStore? { get }

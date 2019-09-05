@@ -13,7 +13,7 @@ class PhotosViewController: UIViewController, PhotosDisplayLogic
     private var photos: [Photo] = []
     private var fetchingMore = false
     var interactor: PhotosBusinessLogic?
-    var router: (NSObjectProtocol & PhotosRoutingLogic & PhotosDataPassing)?
+    var router: (NSObjectProtocol & PhotosDataPassing)?
 
     // MARK: Object lifecycle
 

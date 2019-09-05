@@ -68,8 +68,8 @@ class PhotosInteractor: PhotosBusinessLogic, PhotosDataStore {
 extension PhotosInteractor {
     func getDataOfImage(id: String?) -> Date {
         guard let id = id else { return Date() }
-        if let cachedVersion = cacheForDates.object(forKey: id as NSString) {
-            return cachedVersion as Date
+        if let cachedDate = cacheForDates.object(forKey: id as NSString) {
+            return cachedDate as Date
         } else {
             let date = Date()
             cacheForDates.setObject(date as NSDate, forKey: id as NSString)
