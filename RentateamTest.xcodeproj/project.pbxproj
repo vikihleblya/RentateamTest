@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		54BFCFBCA4AD0682A1BED867 /* Pods_RentateamTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D4CE63902B45984C0E8FD3A /* Pods_RentateamTest.framework */; };
+		6C0DC10D2320FD8400DDAABD /* PhotoDescriptionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0DC1072320FD8400DDAABD /* PhotoDescriptionPresenter.swift */; };
+		6C0DC10E2320FD8400DDAABD /* PhotoDescriptionWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0DC1082320FD8400DDAABD /* PhotoDescriptionWorker.swift */; };
+		6C0DC10F2320FD8400DDAABD /* PhotoDescriptionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0DC1092320FD8400DDAABD /* PhotoDescriptionRouter.swift */; };
+		6C0DC1102320FD8400DDAABD /* PhotoDescriptionModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0DC10A2320FD8400DDAABD /* PhotoDescriptionModels.swift */; };
+		6C0DC1112320FD8400DDAABD /* PhotoDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0DC10B2320FD8400DDAABD /* PhotoDescriptionViewController.swift */; };
+		6C0DC1122320FD8400DDAABD /* PhotoDescriptionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0DC10C2320FD8400DDAABD /* PhotoDescriptionInteractor.swift */; };
 		6C48D6B02320173300E5B144 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C48D6AE2320173300E5B144 /* PhotoTableViewCell.swift */; };
 		6C48D6B12320173300E5B144 /* PhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C48D6AF2320173300E5B144 /* PhotoTableViewCell.xib */; };
 		6C48D6BB2320182000E5B144 /* PhotosPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C48D6B52320182000E5B144 /* PhotosPresenter.swift */; };
@@ -26,6 +32,12 @@
 /* Begin PBXFileReference section */
 		0D4CE63902B45984C0E8FD3A /* Pods_RentateamTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RentateamTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63EBB68326564807B3F5F7FB /* Pods-RentateamTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RentateamTest.debug.xcconfig"; path = "Target Support Files/Pods-RentateamTest/Pods-RentateamTest.debug.xcconfig"; sourceTree = "<group>"; };
+		6C0DC1072320FD8400DDAABD /* PhotoDescriptionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDescriptionPresenter.swift; sourceTree = "<group>"; };
+		6C0DC1082320FD8400DDAABD /* PhotoDescriptionWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDescriptionWorker.swift; sourceTree = "<group>"; };
+		6C0DC1092320FD8400DDAABD /* PhotoDescriptionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDescriptionRouter.swift; sourceTree = "<group>"; };
+		6C0DC10A2320FD8400DDAABD /* PhotoDescriptionModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDescriptionModels.swift; sourceTree = "<group>"; };
+		6C0DC10B2320FD8400DDAABD /* PhotoDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDescriptionViewController.swift; sourceTree = "<group>"; };
+		6C0DC10C2320FD8400DDAABD /* PhotoDescriptionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDescriptionInteractor.swift; sourceTree = "<group>"; };
 		6C48D6AE2320173300E5B144 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
 		6C48D6AF2320173300E5B144 /* PhotoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoTableViewCell.xib; sourceTree = "<group>"; };
 		6C48D6B52320182000E5B144 /* PhotosPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosPresenter.swift; sourceTree = "<group>"; };
@@ -64,6 +76,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6C0DC1062320FD5E00DDAABD /* PhotoDescriptionScene */ = {
+			isa = PBXGroup;
+			children = (
+				6C0DC1072320FD8400DDAABD /* PhotoDescriptionPresenter.swift */,
+				6C0DC1082320FD8400DDAABD /* PhotoDescriptionWorker.swift */,
+				6C0DC1092320FD8400DDAABD /* PhotoDescriptionRouter.swift */,
+				6C0DC10A2320FD8400DDAABD /* PhotoDescriptionModels.swift */,
+				6C0DC10B2320FD8400DDAABD /* PhotoDescriptionViewController.swift */,
+				6C0DC10C2320FD8400DDAABD /* PhotoDescriptionInteractor.swift */,
+			);
+			path = PhotoDescriptionScene;
+			sourceTree = "<group>";
+		};
 		6C48D6AD2320172500E5B144 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -76,12 +101,13 @@
 		6C48D6B32320180000E5B144 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				6C48D6B42320180600E5B144 /* PhotoTableView */,
+				6C0DC1062320FD5E00DDAABD /* PhotoDescriptionScene */,
+				6C48D6B42320180600E5B144 /* PhotoTableViewScene */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
 		};
-		6C48D6B42320180600E5B144 /* PhotoTableView */ = {
+		6C48D6B42320180600E5B144 /* PhotoTableViewScene */ = {
 			isa = PBXGroup;
 			children = (
 				6C48D6B62320182000E5B144 /* PhotosWorker.swift */,
@@ -91,7 +117,7 @@
 				6C48D6B52320182000E5B144 /* PhotosPresenter.swift */,
 				6C48D6BA2320182000E5B144 /* PhotosInteractor.swift */,
 			);
-			path = PhotoTableView;
+			path = PhotoTableViewScene;
 			sourceTree = "<group>";
 		};
 		6C48D6C12320195000E5B144 /* Recources */ = {
@@ -269,13 +295,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C48D6BF2320182000E5B144 /* PhotosViewController.swift in Sources */,
+				6C0DC1122320FD8400DDAABD /* PhotoDescriptionInteractor.swift in Sources */,
+				6C0DC10E2320FD8400DDAABD /* PhotoDescriptionWorker.swift in Sources */,
 				6C48D6BB2320182000E5B144 /* PhotosPresenter.swift in Sources */,
 				6C48D6BC2320182000E5B144 /* PhotosWorker.swift in Sources */,
 				6CD9C06F232026240064F730 /* Photo.swift in Sources */,
+				6C0DC10D2320FD8400DDAABD /* PhotoDescriptionPresenter.swift in Sources */,
+				6C0DC10F2320FD8400DDAABD /* PhotoDescriptionRouter.swift in Sources */,
 				6C6DBEC5231E9F3D00D66A94 /* AppDelegate.swift in Sources */,
 				6C48D6B02320173300E5B144 /* PhotoTableViewCell.swift in Sources */,
+				6C0DC1102320FD8400DDAABD /* PhotoDescriptionModels.swift in Sources */,
 				6C48D6BE2320182000E5B144 /* PhotosModels.swift in Sources */,
 				6C48D6BD2320182000E5B144 /* PhotosRouter.swift in Sources */,
+				6C0DC1112320FD8400DDAABD /* PhotoDescriptionViewController.swift in Sources */,
 				6C48D6C02320182000E5B144 /* PhotosInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
